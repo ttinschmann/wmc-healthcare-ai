@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wmc-healthcare.ai/sitemap.xml
