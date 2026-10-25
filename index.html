@@ -279,19 +279,10 @@
       <p class="body" style="max-width: 520px">30 Minuten. Sie sagen uns, wo es drückt – wir sagen Ihnen, wo wir anfangen würden und was in zwölf Monaten bei Ihnen laufen könnte. Unverbindlich, ohne Folien.</p>
       <p class="small muted">Noch nicht so weit? Wir sehen uns beim <a href="https://www.wmc-healthcare.de/zknft-2027/">Zukunftskongress Krankenhaus am 11. Februar 2027</a>.</p>
     </div>
-    <form class="form" id="form" action="mailto:kontakt@wmc-healthcare.de" method="post" enctype="text/plain">
-      <div class="field"><label for="f-name">Name</label><input id="f-name" name="Name" type="text" autocomplete="name" required></div>
-      <div class="field"><label for="f-funktion">Funktion</label><input id="f-funktion" name="Funktion" type="text" autocomplete="organization-title"></div>
-      <div class="field"><label for="f-haus">Haus</label><input id="f-haus" name="Haus" type="text" autocomplete="organization" required></div>
-      <div class="field"><label for="f-mail">Dienstliche E-Mail</label><input id="f-mail" name="E-Mail" type="email" autocomplete="email" required></div>
-      <div class="field span2"><label for="f-text">Wo drückt es bei Ihnen? <span class="muted" style="font-weight: 400">(optional)</span></label><textarea id="f-text" name="Anliegen" rows="3"></textarea></div>
-      <div class="span2 form-foot">
-        <button class="btn" type="submit">Erstgespräch vereinbaren
-          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </button>
-        <span class="small muted">Wir melden uns innerhalb von zwei Arbeitstagen. <a href="datenschutz.html">Datenschutz</a></span>
-      </div>
-    </form>
+    <div class="form-embed">
+      <iframe data-tally-src="https://tally.so/embed/6D8X7B?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="657" frameborder="0" marginheight="0" marginwidth="0" title="Erstgespräch vereinbaren – Kontaktformular"></iframe>
+      <p class="small muted">Wir melden uns innerhalb von zwei Arbeitstagen. Das Formular wird von Tally (EU) bereitgestellt – <a href="datenschutz.html">Datenschutz</a>. Lieber per E-Mail? <a href="mailto:kontakt@wmc-healthcare.de">kontakt@wmc-healthcare.de</a></p>
+    </div>
   </div>
 </section>
 
@@ -307,20 +298,6 @@
   </nav>
 </footer>
 
-<script>
-// Kontaktformular: öffnet das E-Mail-Programm mit vorausgefülltem Betreff und Text.
-// Ohne JavaScript funktioniert das Formular über die mailto-Action des <form>.
-(function () {
-  var f = document.getElementById('form');
-  if (!f) return;
-  f.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
-    var body = 'Name: ' + v('f-name') + '\nFunktion: ' + v('f-funktion') + '\nHaus: ' + v('f-haus') + '\nE-Mail: ' + v('f-mail') + '\n\nAnliegen:\n' + v('f-text') + '\n';
-    var subject = 'Erstgespräch – ' + v('f-haus');
-    window.location.href = 'mailto:kontakt@wmc-healthcare.de?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
-})();
-</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
